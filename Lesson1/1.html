@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Homework</title>
+    <meta charset="UTF-8">
+    <title>Homework</title>
 </head>
 <body>
 <!--
@@ -20,9 +20,11 @@
 Уточнение: пользователь всегда вводит корректное число.
 -->
 <script>
-  "use strict";
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+    const userTemperature = parseInt(prompt("Введите свою температуру (в Цельсиях)"));
+    const fahrenheitTemperature = (9 / 5) * userTemperature + 32;
+    alert(`Цельсий: ${userTemperature}, Фаренгейт: ${fahrenheitTemperature}`);
 </script>
 </body>
 </html>

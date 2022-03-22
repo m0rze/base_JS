@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Homework</title>
+    <meta charset="UTF-8">
+    <title>Homework</title>
 </head>
 <body>
 <!--
@@ -26,9 +26,23 @@
 Уточнение: пользователь всегда вводит корректное положительное целое число.
 -->
 <script>
-  "use strict";
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+    let i = 1;
+    while (true) {
+        const userNumber = parseInt(prompt("Введите целое число"));
+        if (i === 5) {
+            alert(`Вы ${i} раз не ввели число. До свидания!`);
+            break;
+        }
+        if (userNumber) {
+            alert(`В числе ${userNumber} количество сотен: ${parseInt(userNumber / 100) % 10}, \
+десятков: ${parseInt(userNumber / 10) % 10}, единиц: ${parseInt(userNumber) % 10}`);
+            break;
+        }
+        i++;
+    }
+
 </script>
 </body>
 </html>
