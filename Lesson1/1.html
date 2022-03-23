@@ -22,11 +22,14 @@
 <script>
     "use strict";
 
-    const userTemperature = parseInt(
+    const userTemperature = Number.parseInt(
         prompt("Введите свою температуру (в Цельсиях)")
     );
     const fahrenheitTemperature = (9 / 5) * userTemperature + 32;
-    alert(`Цельсий: ${userTemperature}, Фаренгейт: ${fahrenheitTemperature}`);
+    alert(
+        `Цельсий: ${userTemperature}, \
+Фаренгейт: ${Math.round(fahrenheitTemperature * 100) / 100}`
+    );
 </script>
 </body>
 </html>

@@ -30,7 +30,7 @@
 
     let i = 1;
     while (true) {
-        const userNumber = parseInt(prompt("Введите целое число"));
+        const userNumber = Number.parseInt(prompt("Введите целое число"));
         if (i === 5) {
             alert(`Вы ${i} раз не ввели число. До свидания!`);
             break;
@@ -38,9 +38,9 @@
         if (userNumber) {
             alert(
                 `В числе ${userNumber} \
-количество сотен: ${parseInt(userNumber / 100) % 10}, \
-десятков: ${parseInt(userNumber / 10) % 10}, \
-единиц: ${parseInt(userNumber) % 10}`
+количество сотен: ${Math.round(userNumber / 100) % 10}, \
+десятков: ${Math.round(userNumber / 10) % 10}, \
+единиц: ${Math.round(userNumber) % 10}`
             );
             break;
         }
