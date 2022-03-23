@@ -36,8 +36,12 @@
             break;
         }
         if (userNumber) {
-            alert(`В числе ${userNumber} количество сотен: ${parseInt(userNumber / 100) % 10}, \
-десятков: ${parseInt(userNumber / 10) % 10}, единиц: ${parseInt(userNumber) % 10}`);
+            alert(
+                `В числе ${userNumber} \
+количество сотен: ${parseInt(userNumber / 100) % 10}, \
+десятков: ${parseInt(userNumber / 10) % 10}, \
+единиц: ${parseInt(userNumber) % 10}`
+            );
             break;
         }
         i++;
