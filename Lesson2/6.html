@@ -26,7 +26,7 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
   "use strict";
 
   // Число яблок, можно пробовать поставить свое целое, положительное число.
-  const applesNumber = 6;
+  const applesNumber = 116;
   // Получаем от функции одно из слов "яблоко", "яблока" или "яблок".
   const word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
   // Выводим корректную строку, например:
@@ -40,15 +40,17 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
 
   /**
    * Get right declension.
-   * @param {Number} count - Count of fruits
-   * @param {String} one - Declension.
-   * @param {String} two - Declension.
-   * @param {String} five - Declension.
+   * @param {number} count - Count of fruits
+   * @param {string} one - Declension.
+   * @param {string} two - Declension.
+   * @param {string} five - Declension.
+   * @return string
    */
   function declinationOfNumber(count, one, two, five) {
     if(count < 0) {
       console.log("Введено отрицательное количество");
     }
+    count = Math.round(count);
     if (count === 1) {
       return one;
     } else if (count > 1 && count <= 4) {
