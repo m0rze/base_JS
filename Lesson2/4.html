@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
+
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
+
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
+
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+  let a = Number.parseInt(
+          prompt("Введите первое число")
+  );
+  let b = Number.parseInt(
+          prompt("Введите второе число")
+  );
+
+  let action = prompt(
+          "Введите действие (+, -, *, /)"
+  );
+
+  switch (action) {
+    case "+":
+      console.log(getSum(a, b));
+      break;
+    case "-":
+      console.log(getSubtraction(a, b));
+      break;
+    case "*":
+      console.log(getMulti(a, b));
+      break;
+    case "/":
+      console.log(getDivision(a, b));
+      break;
+    default:
+        console.log(
+                "Введено какое то действие, которое умы математиков " +
+                "еще не придумали, на Нобелевскую премию этого джентельмена"
+        );
+  }
+
+  /**
+   * Get sum.
+   * @param {Number} a - First digit
+   * @param {Number} b - Second digit.
+   */
+  function getSum(a, b) {
+    return a + b;
+  }
+
+  /**
+   * Get subtraction (higher - lower)
+   * @param {Number} a - First digit
+   * @param {Number} b - Second digit.
+   */
+  function getSubtraction(a, b) {
+    if(a > b){
+      return a - b;
+    }
+    return b - a;
+  }
+
+  /**
+   * Get multiplication.
+   * @param {Number} a - First digit
+   * @param {Number} b - Second digit.
+   */
+  function getMulti(a, b) {
+    return a * b;
+  }
+
+  /**
+   * Get division.
+   * @param {Number} a - First digit
+   * @param {Number} b - Second digit, zero is bad.
+   */
+  function getDivision(a, b) {
+    if (b === 0) {
+      alert("Не делите на ноль, это не математично");
+      return `Вперед в бесконечность ------> ${a / b}`;
+    }
+    return a / b;
+  }
+</script>
+</body>
+</html>
