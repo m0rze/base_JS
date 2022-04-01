@@ -45,7 +45,7 @@
     ];
 
     const filterProducts = products.filter(item =>
-        item.photos && item.photos.length > 0
+        "photos" in item && item.photos.length > 0
     );
     console.log(filterProducts);
 
