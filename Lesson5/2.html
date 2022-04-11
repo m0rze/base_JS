@@ -70,9 +70,9 @@
     6. Добавьте атрибут data-dd со значением 3 элементу у которого существует
     атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
      */
-    document.querySelector("[aria-labelledby='dropdownMenuButton']")
-        .setAttribute("data-dd", "3");
 
+    document.querySelector("[aria-labelledby='dropdownMenuButton']")
+        .dataset.dd = "3";
     /*
     7. Удалите атрибут type у элемента с классом "dropdown-toggle".
      */
@@ -84,7 +84,7 @@
     Вывод каждого атрибута и значений должен выглядеть следующим образом (пример):
     Атрибут "class" содержит значение "btn btn-secondary dropdown-toggle"
      */
-    const needEl = document.querySelector(".btn, .dropdown-toggle");
+    const needEl = document.querySelector(".btn.dropdown-toggle");
     needEl.getAttributeNames().forEach((attr) => {
         console.log(
             `Атрибут ${attr} содержит значение ${needEl.getAttribute(attr)}`

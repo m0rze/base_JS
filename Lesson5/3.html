@@ -79,16 +79,22 @@
     */
     function getEventData(event) {
         event.stopPropagation();
-        if (event.target.className === "super_element") {
+        if (event.target.classList.contains("super_element")) {
             console.log(
                 `Класс super_element есть в элементе ${
+                    event.target.tagName.toLowerCase()
+                }`
+            );
+        } else {
+            console.log(
+                `Класс super_element отсутствует в элементе ${
                     event.target.tagName.toLowerCase()
                 }`
             );
         }
 
     }
-    document.querySelectorAll("*").forEach((el) => {
+    document.querySelectorAll("body").forEach((el) => {
         el.addEventListener("click", getEventData);
     });
 
@@ -112,7 +118,7 @@
         if (event.target.tagName === "BUTTON"){
             console.log(event.target.innerText);
         }
-    }, true);
+    });
 
     /*
     6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только
